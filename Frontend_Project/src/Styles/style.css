@@ -5,7 +5,7 @@ body {
 }
 
 header {
-  background: palevioletred;
+  background: rgb(214, 17, 83);
   color: white;
   padding: 15px;
   display: flex;
@@ -24,7 +24,7 @@ a {
 }
 
 .product {
-  background: white;
+  background: lightblue;
   padding: 15px;
   width: 220px;
   border-radius: 8px;
@@ -38,7 +38,7 @@ a {
 }
 
 button {
-  background: green;
+  background: rgb(12, 129, 26);
   color: white;
   border: none;
   padding: 8px;
@@ -68,7 +68,7 @@ button:hover {
 }
 .nav-links {
   display: flex;
-  gap: 25px;   /* 👈 controls space between Home, Wishlist, Cart */
+  gap: 40px;   /* 👈 controls space between Home, Wishlist, Cart */
 }
 
 .auth {
@@ -82,7 +82,7 @@ button:hover {
 .auth input {
   margin-bottom: 15px;   /* space between email & password */
   padding: 10px;
-  font-size: 14px;
+  font-size: 20px;
 }
 .product-actions {
   display: flex;

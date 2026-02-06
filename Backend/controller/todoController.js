@@ -24,30 +24,30 @@ exports.createTodo= async(req,res)=>{
         res.status(500).send(err);
 
     }
-    const {task} =req.body;
-    const newTodo={
-        id:id++,
-        task,
-        Completed:false
-    }
-    todos.push(newTodo)
-    res.json(newTodo)
+    // const {task} =req.body;
+    // const newTodo={
+    //     id:id++,
+    //     task,
+    //     Completed:false
+    // }
+    // todos.push(newTodo)
+    // res.json(newTodo)
 };
 
 exports.updateTodo= async(req,res)=>{
-    // try{
-    //     const todos= await Todo.findById(req.params.id)
-    // if(!todos){
-    //     res.json({message:"Todo not found"})
-    // }
-    // todos.task=req.body.task || todos.task;
-    // todos.completed=req.body.completed === undefined ? todos.completd:req.body.completed;
-    // await todos.save();
-    // res.status(200).json(todos)
-    // }
-    // catch(err){
-    //     res.status(500).send(err)
-    // }
+    try{
+        const todos= await Todo.findById(req.params.id)
+    if(!todos){
+        res.json({message:"Todo not found"})
+    }
+    todos.task=req.body.task || todos.task;
+    todos.completed=req.body.completed === undefined ? todos.completd:req.body.completed;
+    await todos.save();
+    res.status(200).json(todos)
+    }
+    catch(err){
+        res.status(500).send(err)
+    }
 };
 
 exports.deleteTodo= async(req,res)=>{
